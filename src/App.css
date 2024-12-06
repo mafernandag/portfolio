@@ -5,3 +5,7 @@
 body {
   font-family: 'Onest Variable', sans-serif;
 }
+
+b {
+  @apply text-accent;
+}

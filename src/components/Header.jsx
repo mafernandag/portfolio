@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <header className="flex justify-center items-center py-3">
-      <nav className="flex flex-row gap-x-8 text-sm font-semibold">
+      <nav className="flex flex-row gap-x-6 text-sm font-semibold text-white-100">
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/projects">Projects</a>
