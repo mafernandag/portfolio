@@ -4,18 +4,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#241663',
-        secondary: '#A72693',
-        black: { 50: '#26355D', 100: '#160F30' },
-        accent: '#EAE7AF',
-        white: { 50: '#fff', 100: '#e5e7eb' }
+        white: { 50: '#fff', 100: '#e5e7eb' },
+        primary: '#E4B1F0',
+        secondary: '#E95793',
+        accent: '#F4E4B1',
+        'dark-purple': { 50: '#5E1675', 100: '#3C0753' },
+        'dark-blue': { 50: '#030637', 100: '#160F30' }
       },
       textColor: {
         white: { 50: '#fff', 100: '#e5e7eb' },
-        primary: '#241663',
-        secondary: '#A72693',
-        black: { 50: '#26355D', 100: '#160F30' },
-        accent: '#EAE7AF'
+        primary: '#E4B1F0',
+        secondary: '#E95793',
+        accent: '#F4E4B1',
+        'dark-blue': { 50: '#030637', 100: '#160F30' },
+        'dark-purple': { 50: '#5E1675', 100: '#3C0753' }
       }
     }
   },

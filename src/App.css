@@ -7,5 +7,30 @@ body {
 }
 
 b {
-  @apply text-accent;
+  @apply dark:text-primary text-secondary;
+}
+
+.bg-settings {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.bg-dark-gradient {
+  background: radial-gradient(
+    circle at 50% -30%,
+    theme('colors.dark-purple.100'),
+    theme('colors.dark-blue.50'),
+    theme('colors.black')
+  );
+}
+
+.bg-light-gradient {
+  background: white;
+  background: radial-gradient(
+    ellipse 80% 80% at 50% -20%,
+    rgba(120, 119, 198, 0.3),
+    rgba(255, 255, 255, 0)
+  );
 }

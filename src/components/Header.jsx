@@ -2,26 +2,35 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <header className="flex justify-center items-center py-3">
-      <nav className="flex flex-row gap-x-6 text-sm font-semibold text-white-100">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
-        <a href="/">
+    <header className="flex justify-center items-center py-3 mt-1">
+      <nav className="flex flex-row gap-x-6 text-sm font-semibold text-dark-purple-100 dark:text-white-100 items-center">
+        <a href="/about" className="hover:text-accent transition">
+          Experience
+        </a>
+        <a href="/projects" className="hover:text-accent transition">
+          Projects
+        </a>
+        <a href="/" className="hover:text-accent transition">
+          About
+        </a>
+        <a href="/contact" className="hover:text-accent transition">
+          Contact
+        </a>
+        <a href="/" className="hover:text-accent transition">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            fill="none"
             stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
             class="size-5"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
-            />
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
           </svg>
         </a>
         {/* <svg
