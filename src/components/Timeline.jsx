@@ -1,18 +1,31 @@
 import React from 'react'
 
-export const Timeline = ({ date, title, description }) => {
+export const Timeline = ({
+  date,
+  title,
+  company,
+  description,
+  marginBottom
+}) => {
   return (
-    <li class="mb-10 ms-4">
-      <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-      <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-        {date}
-      </time>
-      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-        {title}
-      </h3>
-      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-        {description}
-      </p>
-    </li>
+    <div className={`flex flex-row gap-x-14 ml-3 ${marginBottom}`}>
+      <li class="mb-10 ms-4 w-[40%]">
+        <div class="absolute w-3 h-3 bg-secondary rounded-full mt-1.5 -start-1.5 dark:bg-primary"></div>
+        <h3 class="text-xl font-bold dark:text-primary text-secondary">
+          {title}
+        </h3>
+        <p class="mb-1 font-semibold text-lg text-neutral-700 dark:text-accent">
+          {company}
+        </p>
+        <time class="mb-1 text-sm font-normal leading-none text-neutral-500 dark:text-gray-300">
+          {date}
+        </time>
+      </li>
+      <div className="w-[60%]">
+        <h3 className="text-neutral-600 dark:text-gray-300 leading-relaxed font-medium">
+          {description}
+        </h3>
+      </div>
+    </div>
   )
 }

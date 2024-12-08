@@ -5,7 +5,7 @@ const Badge = ({ children, href }) => {
     <a
       href={href}
       target="__blank"
-      class="bg-pink-100 flex flex-row gap-x-2 items-center text-dark-blue-100 w-min px-3.5 py-1 rounded-full hover:scale-110 hover:bg-primary/20 transition dark:border-white-100 border dark:bg-dark-blue-50 dark:text-white-100"
+      class="flex flex-row gap-x-2 items-center w-min px-3.5 py-1 rounded-full bg-pink-100 text-dark-blue-100 dark:bg-dark-blue-50 dark:text-white-100 border dark:border-white-100 hover:scale-110 hover:dark:bg-primary hover:dark:text-dark-purple-100 hover:dark:border-dark-purple-100 hover:bg-dark-purple-100 hover:text-white-100 transition "
     >
       {children}
     </a>
