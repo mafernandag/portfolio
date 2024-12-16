@@ -6,23 +6,28 @@ body {
   font-family: 'Onest Variable', sans-serif;
 }
 
+div {
+  scroll-behavior: smooth;
+}
+
 b {
   @apply dark:text-primary text-secondary;
 }
 
 .bg-settings {
   height: 100vh;
-  display: flex;
+  width: 100vw;
   flex-direction: column;
   overflow: auto;
+  background-attachment: local;
 }
 
 .dark-gradient {
   background: radial-gradient(
-    circle at 50% -30%,
-    theme('colors.dark-purple.100'),
-    theme('colors.dark-blue.50'),
-    theme('colors.black')
+    circle at 50% -20%,
+    theme('colors.dark-purple.100') 0%,
+    theme('colors.dark-blue.50') 49%,
+    theme('colors.black') 100%
   );
 }
 
@@ -37,4 +42,10 @@ b {
 
 .text-color {
   @apply dark:text-white-50 text-dark-purple-100;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
