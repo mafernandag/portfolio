@@ -10,8 +10,12 @@ import materialUI from '../assets/materialui.svg'
 const Project = ({ name, tools, description, image, previewLink }) => {
   return (
     <div className="flex flex-row gap-x-6 pb-10 items-center">
-      <img alt="project screenshot" src={image} className="rounded-xl w-1/2" />
-      <div className="flex flex-col gap-y-4">
+      <img
+        alt="project screenshot"
+        src={image}
+        className="rounded-xl w-1/2 hover:-translate-y-1 hover:scale-105 transition ease-in-out duration-200"
+      />
+      <div className="flex flex-col gap-y-3">
         <h3 className="text-2xl font-bold text-color">{name}</h3>
         <div className="flex flex-wrap flex-row gap-x-2 gap-y-2">
           {tools.map((tool) => {
@@ -70,19 +74,37 @@ const Project = ({ name, tools, description, image, previewLink }) => {
             }
           })}
         </div>
-        <p className="text-neutral-600 text-pretty dark:text-gray-400 leading-snug font-medium">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-          quibusdam nesciunt nam sit explicabo assumenda vitae sapiente id et,
-          qui modi officiis ut.
+        <p className="text-neutral-600 text-pretty dark:text-gray-400 leading-snug font-medium text-sm">
+          {description}
         </p>
-        <button
-          type="button"
-          className="text-gray-900 dark:text-white-50 bg-white w-min border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-        >
-          <a href={previewLink} target="__blank">
+        {previewLink && (
+          <a
+            href={previewLink}
+            target="__blank"
+            type="button"
+            className="flex flex-row gap-x-2 items-center text-gray-900 dark:text-white-50 bg-white w-min border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="size-5"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z" />
+              <path d="M7 20h10" />
+              <path d="M9 16v4" />
+              <path d="M15 16v4" />
+            </svg>
             Preview
           </a>
-        </button>
+        )}
       </div>
     </div>
   )

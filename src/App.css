@@ -22,26 +22,12 @@ b {
   background-attachment: local;
 }
 
-.dark-gradient {
-  background: radial-gradient(
-    circle at 50% -20%,
-    theme('colors.dark-purple.100') 0%,
-    theme('colors.dark-blue.50') 49%,
-    theme('colors.black') 100%
-  );
-}
-
-.light-gradient {
-  background: white;
-  background: radial-gradient(
-    ellipse 80% 80% at 50% -20%,
-    rgba(120, 119, 198, 0.3),
-    rgba(255, 255, 255, 0)
-  );
-}
-
 .text-color {
-  @apply dark:text-white-50 text-dark-purple-100;
+  @apply dark:text-white-50 text-dark-purple-200;
+}
+
+.header-hover {
+  @apply dark:hover:text-primary hover:text-secondary transition;
 }
 
 @media (prefers-reduced-motion: reduce) {
