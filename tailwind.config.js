@@ -7,18 +7,22 @@ module.exports = {
       colors: {
         white: { 50: '#fff', 100: '#e5e7eb' },
         primary: '#E4B1F0',
-        secondary: '#F075AA',
+        secondary: '#CF82E0',
         accent: '#F4E4B1',
-        'dark-purple': { 50: '#5E1675', 100: '#3C0753' },
-        'dark-blue': { 50: '#030637', 100: '#160F30' }
+        'dark-purple': { 50: '#5E1675', 100: '#3C0753', 200: '#411749' },
+        'dark-blue': { 50: '#030637', 100: '#160F30' },
+        'light-purple': { 50: '#F9E7FF', 100: '#F2D9F9' },
+        'purple-accent': '#6F1698'
       },
       textColor: {
         white: { 50: '#fff', 100: '#e5e7eb' },
         primary: '#E4B1F0',
-        secondary: '#F075AA',
+        secondary: '#CF82E0',
         accent: '#F4E4B1',
         'dark-blue': { 50: '#030637', 100: '#160F30' },
-        'dark-purple': { 50: '#5E1675', 100: '#3C0753', 200: '#411749' }
+        'dark-purple': { 50: '#5E1675', 100: '#3C0753', 200: '#411749' },
+        'light-purple': { 50: '#F9E7FF', 100: '#F2D9F9' },
+        'purple-accent': '#6F1698'
       },
       backgroundImage: {
         'light-gradient':

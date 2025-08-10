@@ -1,42 +1,72 @@
-import React from 'react'
-import { useState } from 'react'
-import { handleError } from 'vue'
+import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import LanguageDropdown from './LanguageDropdown'
 
 const Header = () => {
+  const { t } = useTranslation()
   const [dark, setDark] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState(false)
-
-  const handleToggleDropdown = () => {
-    setOpenDropdown(!openDropdown)
-  }
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const toggleDarkMode = () => {
     setDark(!dark)
     document.body.classList.toggle('dark')
     console.log(document.body.classList.value.includes('dark'))
   }
+
+  useEffect(() => {
+    const scrollContainer = document.querySelector('.bg-settings')
+
+    const getScrollTop = () => {
+      if (scrollContainer) return scrollContainer.scrollTop
+      return (
+        window.scrollY ||
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        0
+      )
+    }
+
+    const handleScroll = () => {
+      setIsScrolled(getScrollTop() > 10)
+    }
+
+    handleScroll()
+
+    if (scrollContainer) {
+      scrollContainer.addEventListener('scroll', handleScroll, {
+        passive: true
+      })
+      return () => scrollContainer.removeEventListener('scroll', handleScroll)
+    } else {
+      window.addEventListener('scroll', handleScroll, { passive: true })
+      return () => window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   return (
-    <header className="flex justify-center items-center py-3 mt-1 fixed w-full px-10">
+    <header
+      className={
+        `fixed top-0 w-fit place-self-center rounded-full z-50 px-5 py-0.5 mt-1 transition duration-300 ` +
+        (isScrolled
+          ? 'bg-white/70 dark:bg-dark-blue-100/60 backdrop-blur-md shadow-md'
+          : 'bg-transparent')
+      }
+    >
       <nav className="flex flex-row gap-x-6 w-full text-sm font-semibold text-dark-purple-100 dark:text-white-100 items-center">
-        <div className="flex flex-grow" />
         <a href="#experience" className="header-hover">
-          Experience
+          {t('nav.experience')}
         </a>
         <a href="#projects" className="header-hover">
-          Projects
+          {t('nav.projects')}
         </a>
         <a href="#about" className="header-hover">
-          About
+          {t('nav.about')}
         </a>
         {/* <a href="#contact" className="header-hover ">
           Contact
         </a> */}
-
         {/* Dropdown button */}
         <LanguageDropdown />
 
-        <div className="flex flex-grow" />
         <span onClick={toggleDarkMode} className="header-hover">
           {dark ? (
             <svg

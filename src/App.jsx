@@ -8,50 +8,58 @@ import SectionTitle from './components/SectionTitle'
 import opentech from './assets/opentech.png'
 import ucabForms from './assets/ucab-forms.png'
 import profileImage from './assets/profileIcon.jpg'
+import { useTranslation } from 'react-i18next'
+import Lottie from 'lottie-react'
+import aboutMe from './assets/about-me-animation.json'
 
 export default function App() {
+  const { t } = useTranslation()
   const experience = [
     {
-      title: 'Web Developer and Technical Support',
-      date: 'June 2022 – Present',
-      description:
-        'Currently designing and developing a mentor-matching platform utilizing React.js, Material UI, and Firebase for real-time authentication and data management. Enhanced the research journal web page with updates in HTML, and SASS. Leveraged GitHub for collaborative development and version control.',
-      company: 'Accel.AI',
-      jobType: 'Part-time'
+      title: t('experience.accel.title'),
+      date: t('experience.accel.date'),
+      time: t('experience.accel.time'),
+      description: t('experience.accel.description'),
+      company: t('experience.accel.company')
     },
     {
-      title: 'Front-end Web Developer',
-      date: 'August 2023 – December 2023',
-      description:
-        'Redesigned and implemented LCC OpenTech’s corporate website using Qwik, transforming it into a modern, user-friendly platform aligned with industry standards. Translated Figma designs into sleek, responsive layouts using Tailwind CSS, delivering a visually appealing and adaptable user interface.',
-      company: 'LCC OpenTech',
-      jobType: 'Internship'
+      title: t('experience.opentech.title'),
+      date: t('experience.opentech.date'),
+      time: t('experience.opentech.time'),
+      description: t('experience.opentech.description'),
+      company: t('experience.opentech.company'),
+      jobType: t('experience.opentech.jobType')
     }
   ]
 
   const projects = [
     {
-      name: "OpenTech LCC's Company Website",
-      description:
-        'Developed a modern, user-friendly corporate website for LLC OpenTech, focusing on responsive design and enhanced user engagement. Translated Figma designs into functional layouts using Qwik and Tailwind CSS, ensuring a seamless experience across devices.',
+      name: t('projects.opentech.name'),
+      description: t('projects.opentech.description'),
       previewLink: 'https://lccopen.tech/',
       image: opentech,
       tools: ['Qwik', 'Tailwind CSS']
     },
     {
-      name: 'UCAB Forms',
+      name: t('projects.ucab.name'),
       tools: ['React', 'Python', 'Material UI', 'Firebase'],
       image: ucabForms,
       previewLink: 'https://ucab-forms.vercel.app/',
-      description:
-        'Enhanced the platform "UCAB Forms" by integrating advanced data mining capabilities and designing an intuitive front-end interface. This allowed users to analyze survey data for patterns and trends, supporting informed decision-making and research excellence at the Universidad Católica Andrés Bello.'
+      description: t('projects.ucab.description'),
+      githubLink: 'https://github.com/mafernandag/ucab-forms-v3'
     },
     {
-      name: 'Mentor Match Platform',
+      name: t('projects.mentor.name'),
       tools: ['React', 'Material UI', 'Firebase'],
       image: opentech,
-      description:
-        'Developed to facilitate meaningful connections between mentors and mentees. Utilized React.js and Material UI for an intuitive and responsive user interface and implemented real-time user authentication and data management with Firebase, ensuring efficient storage and retrieval of matching data.'
+      description: t('projects.mentor.description'),
+      githubLink: 'https://github.com/AccelAI/Mentoring-app'
+    },
+    {
+      name: t('projects.travel.name'),
+      tools: ['Google Apps Script', 'JavaScript'],
+      description: t('projects.travel.description'),
+      image: ucabForms
     }
   ]
   return (
@@ -60,18 +68,20 @@ export default function App() {
       <div className="xl:px-80 lg:px-60 md:px-40 px-10">
         <div className="flex flex-col gap-y-36">
           {/* INTRODUCTION */}
-          <div className="pt-36 flex flex-col gap-y-6 mb-14">
+          <div className="pt-36 flex flex-col gap-y-6 mb-14 mt-8">
             <img
               src={profileImage}
               alt="Profile"
               className="rounded-full size-20"
             />
-            <h1 className="text-5xl font-bold text-color">Hello, I'm Maria!</h1>
-            <p className="text-xl font-medium text-dark-purple-200 dark:text-white-100 w-3/4">
-              Informatics Engineer from Venezuela, with hands-on experience in{' '}
-              <b>web development</b>, specializing in modern{' '}
-              <b>JavaScript frameworks </b>
-              and user interface design.
+            <h1 className="text-5xl font-bold text-color">
+              {t('intro.title')}
+            </h1>
+            <p className="text-xl text-pretty font-medium text-dark-purple-200 dark:text-white-100 w-3/4">
+              <span
+                className="whitespace-pre-line"
+                dangerouslySetInnerHTML={{ __html: t('intro.subtitle') }}
+              />
             </p>
             {/* BADGES */}
             <div className="flex flex-row gap-x-4">
@@ -185,16 +195,10 @@ export default function App() {
                 <p>Medium</p>
               </Badge>
             </div>
-            {/*  <p className="text-xl font-medium mt-4 text-white-100">
-          Passionate about creating intuitive user experiences and maintaining
-          high code quality. Proven track record in both remote and hybrid work
-          environments, collaborating effectively with international teams while
-          managing multiple projects.
-        </p> */}
           </div>
-          <div id={'experience'}>
+          <div id={'experience'} className="mt-8">
             {/* PROFESSIONAL EXPERIENCE */}
-            <SectionTitle title={'Professional Experience'}>
+            <SectionTitle title={t('sections.experience')}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -226,7 +230,7 @@ export default function App() {
           </div>
           <div id="projects">
             {/* PROJECTS */}
-            <SectionTitle title={'Projects'}>
+            <SectionTitle title={t('sections.projects')}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -246,9 +250,9 @@ export default function App() {
               <Project key={index} {...project} />
             ))}
           </div>
-          <div id="about">
+          <div id="about" className="mb-16">
             {/* ABOUT ME */}
-            <SectionTitle title={'About Me'}>
+            <SectionTitle title={t('sections.about')}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -264,6 +268,17 @@ export default function App() {
                 />
               </svg>
             </SectionTitle>
+            <div className="flex flex-row gap-x-4">
+              <p
+                className="w-3/4 text-neutral-600 text-pretty dark:text-gray-300 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: t('about.content') }}
+              />
+              <Lottie
+                animationData={aboutMe}
+                loop={true}
+                style={{ width: '50%' }}
+              />
+            </div>
           </div>
         </div>
       </div>

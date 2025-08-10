@@ -6,7 +6,8 @@ const Timeline = ({
   company,
   description,
   marginBottom,
-  jobType
+  jobType,
+  time
 }) => {
   return (
     <div className={`flex flex-row gap-x-14 ml-3 ${marginBottom}`}>
@@ -15,20 +16,24 @@ const Timeline = ({
         <h3 className="text-xl leading-tight font-bold dark:text-primary text-secondary">
           {title}
         </h3>
-        <p className="font-semibold text-lg text-neutral-700 dark:text-accent">
+        <p className="font-semibold text-lg text-purple-accent dark:text-accent">
           {company}
         </p>
         <time className="text-sm mb-1 leading-none text-neutral-500 dark:text-gray-300">
           {date}
         </time>
+        <p className="text-sm font-light text-neutral-400 dark:text-gray-400 mb-1">
+          {time}
+        </p>
         <p className="text-sm font-light text-neutral-400 dark:text-gray-400">
           {jobType}
         </p>
       </div>
       <div className="w-[60%]">
-        <h4 className="text-neutral-600 text-pretty dark:text-gray-300 leading-relaxed font-medium">
-          {description}
-        </h4>
+        <h4
+          className="bold-description text-neutral-600 text-pretty dark:text-gray-300 leading-relaxed whitespace-pre-line"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       </div>
     </div>
   )
