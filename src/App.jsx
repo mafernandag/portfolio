@@ -7,6 +7,8 @@ import Project from './components/Project'
 import SectionTitle from './components/SectionTitle'
 import opentech from './assets/opentech.png'
 import ucabForms from './assets/ucab-forms.png'
+import mentorMatch from './assets/mentorMatch.png'
+import travelGrant from './assets/travelGrant.png'
 import profileImage from './assets/profileIcon.jpg'
 import { useTranslation } from 'react-i18next'
 import Lottie from 'lottie-react'
@@ -51,7 +53,7 @@ export default function App() {
     {
       name: t('projects.mentor.name'),
       tools: ['React', 'Material UI', 'Firebase'],
-      image: opentech,
+      image: mentorMatch,
       description: t('projects.mentor.description'),
       githubLink: 'https://github.com/AccelAI/Mentoring-app'
     },
@@ -59,7 +61,7 @@ export default function App() {
       name: t('projects.travel.name'),
       tools: ['Google Apps Script', 'JavaScript'],
       description: t('projects.travel.description'),
-      image: ucabForms
+      image: travelGrant
     }
   ]
   return (
