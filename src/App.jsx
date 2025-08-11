@@ -77,7 +77,7 @@ export default function App() {
       <div className="xl:px-80 lg:px-60 md:px-40 px-10">
         <div className="flex flex-col gap-y-36">
           {/* INTRODUCTION */}
-          <div className="pt-36 flex flex-col gap-y-6 mb-14 mt-8 lg:mb-24">
+          <div className="h-[100vh] justify-center flex flex-col gap-y-6">
             <motion.img
               src={profileImage}
               alt="Profile"
