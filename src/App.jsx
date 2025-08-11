@@ -1,17 +1,24 @@
+import '@fontsource-variable/onest'
 import './App.css'
+
+// Libraries
+import { useTranslation } from 'react-i18next'
+import Lottie from 'lottie-react'
+import { motion } from 'motion/react'
+
+// Components
 import Header from './components/Header'
 import Badge from './components/Badge'
-import '@fontsource-variable/onest'
 import Timeline from './components/Timeline'
 import Project from './components/Project'
 import SectionTitle from './components/SectionTitle'
+
+// Assets
 import opentech from './assets/opentech.png'
 import ucabForms from './assets/ucab-forms.png'
 import mentorMatch from './assets/mentorMatch.png'
 import travelGrant from './assets/travelGrant.png'
 import profileImage from './assets/profileIcon.jpg'
-import { useTranslation } from 'react-i18next'
-import Lottie from 'lottie-react'
 import aboutMe from './assets/about-me-animation.json'
 
 export default function App() {
@@ -71,22 +78,40 @@ export default function App() {
         <div className="flex flex-col gap-y-36">
           {/* INTRODUCTION */}
           <div className="pt-36 flex flex-col gap-y-6 mb-14 mt-8">
-            <img
+            <motion.img
               src={profileImage}
               alt="Profile"
               className="rounded-full size-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.5, ease: 'easeInOut' }}
             />
-            <h1 className="text-5xl font-bold text-color">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.5, ease: 'easeInOut' }}
+              className="text-5xl font-bold text-color"
+            >
               {t('intro.title')}
-            </h1>
-            <p className="text-xl text-pretty font-medium text-dark-purple-200 dark:text-white-100 w-full xl:w-3/4">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.9, ease: 'easeInOut' }}
+              className="text-xl text-pretty font-medium text-dark-purple-200 dark:text-white-100 w-full xl:w-3/4"
+            >
               <span
                 className="whitespace-pre-line"
                 dangerouslySetInnerHTML={{ __html: t('intro.subtitle') }}
               />
-            </p>
+            </motion.p>
             {/* BADGES */}
-            <div className="flex flex-row gap-x-4 flex-wrap xl:flex-nowrap gap-y-2">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 1.3, ease: 'easeInOut' }}
+              className="flex flex-row gap-x-4 flex-wrap xl:flex-nowrap gap-y-2"
+            >
               <Badge
                 href={
                   'https://drive.google.com/uc?export=download&id=1iIT7I3IvIRB0T9StgQEoRC5D8K7C71ck'
@@ -196,7 +221,7 @@ export default function App() {
                 </svg>
                 <p>Medium</p>
               </Badge>
-            </div>
+            </motion.div>
           </div>
           <div id={'experience'} className="mt-8">
             {/* PROFESSIONAL EXPERIENCE */}
@@ -271,7 +296,11 @@ export default function App() {
               </svg>
             </SectionTitle>
             <div className="flex flex-col lg:flex-row gap-x-4">
-              <p
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, ease: 'easeInOut', delay: 0.5 }}
+                viewport={{ once: true }}
                 className="w-full lg:w-3/4 text-neutral-600 text-pretty dark:text-gray-300 leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: t('about.content') }}
               />

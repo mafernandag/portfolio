@@ -9,6 +9,7 @@ import materialUI from '../assets/materialui.svg'
 import javascript from '../assets/javascript.svg'
 import appsScript from '../assets/appsScript.svg'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'motion/react'
 
 const Project = ({
   name,
@@ -20,7 +21,13 @@ const Project = ({
 }) => {
   const { t } = useTranslation()
   return (
-    <div className="flex flex-col lg:flex-row gap-x-6 gap-y-4 lg:gap-y-0 pb-10 items-center">
+    <motion.div
+      className="flex flex-col lg:flex-row gap-x-6 gap-y-4 lg:gap-y-0 pb-10 items-center"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeInOut', delay: 0.5 }}
+      viewport={{ once: true }}
+    >
       <img
         alt="project screenshot"
         src={image}
@@ -110,7 +117,7 @@ const Project = ({
               href={previewLink}
               target="__blank"
               type="button"
-              className="flex flex-row gap-x-2 items-center text-gray-900 dark:text-white-50 bg-white w-min border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+              className="hover:scale-110 transition flex flex-row gap-x-2 items-center text-gray-900 dark:text-white-50 bg-white w-min border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +145,7 @@ const Project = ({
               href={githubLink}
               target="__blank"
               type="button"
-              className="flex flex-row gap-x-2 items-center text-gray-900 dark:text-white-50 bg-white w-min border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+              className="hover:scale-110 transition flex flex-row gap-x-2 items-center text-gray-900 dark:text-white-50 bg-white w-max border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +167,7 @@ const Project = ({
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
