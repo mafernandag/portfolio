@@ -18,11 +18,11 @@ const Project = ({
   githubLink
 }) => {
   return (
-    <div className="flex flex-row gap-x-6 pb-10 items-center">
+    <div className="flex flex-col lg:flex-row gap-x-6 gap-y-4 lg:gap-y-0 pb-10 items-center">
       <img
         alt="project screenshot"
         src={image}
-        className="rounded-xl w-1/2 hover:-translate-y-1 hover:scale-105 transition ease-in-out duration-200"
+        className="rounded-xl w-full lg:w-1/2 hover:-translate-y-1 hover:scale-105 transition ease-in-out duration-200"
       />
       <div className="flex flex-col gap-y-3">
         <h3 className="text-2xl font-bold text-color">{name}</h3>

@@ -79,17 +79,17 @@ export default function App() {
             <h1 className="text-5xl font-bold text-color">
               {t('intro.title')}
             </h1>
-            <p className="text-xl text-pretty font-medium text-dark-purple-200 dark:text-white-100 w-3/4">
+            <p className="text-xl text-pretty font-medium text-dark-purple-200 dark:text-white-100 w-full xl:w-3/4">
               <span
                 className="whitespace-pre-line"
                 dangerouslySetInnerHTML={{ __html: t('intro.subtitle') }}
               />
             </p>
             {/* BADGES */}
-            <div className="flex flex-row gap-x-4">
+            <div className="flex flex-row gap-x-4 flex-wrap xl:flex-nowrap gap-y-2">
               <Badge
                 href={
-                  'https://drive.google.com/uc?export=download&id=1OlAwef9dd7y9DcWM-6oGlzGVsjaFmFZg'
+                  'https://drive.google.com/uc?export=download&id=1iIT7I3IvIRB0T9StgQEoRC5D8K7C71ck'
                 }
               >
                 <svg
@@ -270,15 +270,16 @@ export default function App() {
                 />
               </svg>
             </SectionTitle>
-            <div className="flex flex-row gap-x-4">
+            <div className="flex flex-col lg:flex-row gap-x-4">
               <p
-                className="w-3/4 text-neutral-600 text-pretty dark:text-gray-300 leading-relaxed"
+                className="w-full lg:w-3/4 text-neutral-600 text-pretty dark:text-gray-300 leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: t('about.content') }}
               />
               <Lottie
                 animationData={aboutMe}
                 loop={true}
-                style={{ width: '50%' }}
+                /* style={{ width: '50%' }} */
+                className="w-[80%] lg:w-[60%] self-center"
               />
             </div>
           </div>
