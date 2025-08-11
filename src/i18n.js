@@ -63,6 +63,9 @@ const resources = {
       about: {
         content:
           "I'm María Guerra, a bilingual software developer with a Bachelor's in <b>Informatics Engineering</b> from Universidad Católica Andrés Bello with <b>international coursework in web development</b> from Universidad de Guadalajara.<br/><br/> I specialize in front-end technologies but I'm also interested in back-end development, so I'm always learning new technologies. I’m passionate about <b>crafting intuitive user experiences, optimizing processes, and contributing to inclusive tech communities.</b><br/><br/> I have a proven track record in both <b>remote and hybrid work environments</b>, collaborating effectively with international teams while managing multiple projects.<br/><br/> Some of my hobbies include <b>listening to music, reading and staying updated with the latest tech news.</b>"
+      },
+      projectButton: {
+        repo: 'Repository'
       }
     }
   },
@@ -127,6 +130,9 @@ const resources = {
       about: {
         content:
           'Soy María Guerra, desarrolladora de software bilingüe con una licenciatura en <b>Ingeniería Informática</b> de la Universidad Católica Andrés Bello y <b>formación internacional en desarrollo web</b> en la Universidad de Guadalajara.<br/><br/> Me especializo en tecnologías de front‑end, pero también me interesa el back‑end, así que siempre estoy aprendiendo nuevas tecnologías. Me apasiona <b>crear experiencias de usuario intuitivas, optimizar procesos y aportar a comunidades tecnológicas inclusivas.</b><br/><br/> Cuento con experiencia en <b>entornos remotos e híbridos</b>, colaborando con equipos internacionales y gestionando múltiples proyectos.<br/><br/> Algunos de mis pasatiempos incluyen <b>escuchar música, leer y mantenerme al día con las últimas noticias tecnológicas.</b>'
+      },
+      projectButton: {
+        repo: 'Repositorio'
       }
     }
   }
