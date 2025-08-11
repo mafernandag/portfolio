@@ -57,7 +57,7 @@ const LanguageDropdown = () => {
       </div>
       {openDropdown && (
         <div
-          className="absolute bg-gray-50  z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
+          className="absolute bg-gray-50  z-10 mt-2 w-fit md:w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"

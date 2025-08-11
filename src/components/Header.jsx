@@ -8,12 +8,28 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
 
   const toggleDarkMode = () => {
-    setDark(!dark)
-    document.body.classList.toggle('dark')
-    console.log(document.body.classList.value.includes('dark'))
+    const nextIsDark = !dark
+    setDark(nextIsDark)
+    document.documentElement.classList.toggle('dark', nextIsDark)
+    try {
+      localStorage.setItem('theme', nextIsDark ? 'dark' : 'light')
+    } catch (_) {}
   }
 
   useEffect(() => {
+    // Initialize theme from storage; ensure state matches DOM. Default is handled inline in index.html
+    try {
+      const storedTheme = localStorage.getItem('theme')
+      const initialIsDark = storedTheme
+        ? storedTheme === 'dark'
+        : document.documentElement.classList.contains('dark')
+      setDark(initialIsDark)
+      document.documentElement.classList.toggle('dark', initialIsDark)
+    } catch (_) {
+      setDark(true)
+      document.documentElement.classList.add('dark')
+    }
+
     const scrollContainer = document.querySelector('.bg-settings')
 
     const getScrollTop = () => {
@@ -51,14 +67,14 @@ const Header = () => {
           : 'bg-transparent')
       }
     >
-      <nav className="flex flex-row gap-x-6 w-full text-sm font-semibold text-dark-purple-100 dark:text-white-100 items-center">
+      <nav className="flex flex-row md:gap-x-6 gap-x-4  w-full text-sm font-semibold text-dark-purple-100 dark:text-white-100 items-center">
         <a href="#experience" className="header-hover">
           {t('nav.experience')}
         </a>
         <a href="#projects" className="header-hover">
           {t('nav.projects')}
         </a>
-        <a href="#about" className="header-hover">
+        <a href="#about" className="header-hover text-center">
           {t('nav.about')}
         </a>
         {/* <a href="#contact" className="header-hover ">

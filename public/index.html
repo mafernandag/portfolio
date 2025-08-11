@@ -2,8 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.webp" type="image/webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      ;(function () {
+        try {
+          var storedTheme = localStorage.getItem('theme')
+          // Default to dark if nothing stored yet
+          var isDark = storedTheme ? storedTheme === 'dark' : true
+          if (isDark) {
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.remove('dark')
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark')
+        }
+      })()
+    </script>
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
