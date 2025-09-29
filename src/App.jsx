@@ -62,6 +62,7 @@ export default function App() {
       tools: ['React', 'Material UI', 'Firebase'],
       image: mentorMatch,
       description: t('projects.mentor.description'),
+      previewLink: 'https://mentor.accel.ai/',
       githubLink: 'https://github.com/AccelAI/Mentoring-app'
     },
     {

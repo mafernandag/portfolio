@@ -117,7 +117,7 @@ const Project = ({
               href={previewLink}
               target="__blank"
               type="button"
-              className="hover:scale-110 transition flex flex-row gap-x-2 items-center text-gray-900 dark:text-white-50 bg-white w-min border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+              className="hover:scale-110 transition flex flex-row gap-x-2 items-center text-gray-900 dark:text-white-50 bg-white w-max border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +137,7 @@ const Project = ({
                 <path d="M9 16v4" />
                 <path d="M15 16v4" />
               </svg>
-              Preview
+              {t('projectButton.web')}
             </a>
           )}
           {githubLink && (
