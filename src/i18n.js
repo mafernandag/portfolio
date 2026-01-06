@@ -25,7 +25,7 @@ const resources = {
           date: 'June 2022 – January 2026',
           time: '3 years and 8 months',
           description:
-            "Architecting and developing a <b>mentor-matching platform</b> to facilitate connections between mentors and mentees.\nDeveloped <b>automation extensions</b> for Google Workspace using Apps Script.\n <b>Enhanced</b> the research journal web page with updates in HTML, and SASS.\n <b>Managing and writing</b> for the company's Medium blog, reviewing articles and ensuring quality writing and adherence to guidelines.",
+            "Architected and developed a <b>mentor-matching platform</b> to facilitate connections between mentors and mentees.\nDeveloped <b>automation extensions</b> for Google Workspace using Apps Script.\n <b>Enhanced</b> the research journal web page with updates in HTML, and SASS.\n <b>Managed and wrote</b> for the company's Medium blog, reviewing articles and ensuring quality writing and adherence to guidelines.",
           company: 'Accel.AI'
         },
         opentech: {
@@ -93,7 +93,7 @@ const resources = {
           date: 'Junio 2022 – Enero 2026',
           time: '3 años y 8 meses',
           description:
-            'Diseñando y desarrollando una <b>plataforma de emparejamiento de mentores</b> para facilitar conexiones entre mentores y aprendices.\nDesarrollé <b>extensiones de automatización</b> para Google Workspace usando Apps Script.\n <b>Mejoré</b> la página web de una revista de investigación con actualizaciones en HTML y SASS.\n <b>Gestiono y escribo</b> para el blog de Medium de la empresa, revisando artículos y asegurando la calidad y el cumplimiento de las pautas.',
+            'Diseñé y desarrollé una <b>plataforma de emparejamiento de mentores</b> para facilitar conexiones entre mentores y aprendices.\nDesarrollé <b>extensiones de automatización</b> para Google Workspace usando Apps Script.\n <b>Mejoré</b> la página web de una revista de investigación con actualizaciones en HTML y SASS.\n <b>Gestioné y escribí</b> para el blog de Medium de la empresa, revisando artículos y asegurando la calidad y el cumplimiento de las pautas.',
           company: 'Accel.AI'
         },
         opentech: {

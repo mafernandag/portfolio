@@ -22,7 +22,7 @@ import profileImage from './assets/profileIcon.jpg'
 import aboutMe from './assets/about-me-animation.json'
 
 export default function App() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const experience = [
     {
       title: t('experience.accel.title'),
@@ -115,7 +115,9 @@ export default function App() {
             >
               <Badge
                 href={
-                  'https://drive.google.com/uc?export=download&id=1l4Y0y1uDk_7bU0coeBgIqbjbc9_7fh8g'
+                  i18n.language === 'en'
+                    ? 'https://drive.google.com/uc?export=download&id=1l4Y0y1uDk_7bU0coeBgIqbjbc9_7fh8g'
+                    : 'https://drive.google.com/uc?export=download&id=1bUji_Lfpf2YIP4VXwZrr5EBz6KSCnBtj'
                 }
               >
                 <svg
@@ -162,7 +164,7 @@ export default function App() {
               </Badge>
               <Badge href={'https://github.com/mafernandag'}>
                 <svg
-                  class="size-4"
+                  className="size-4"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -210,7 +212,7 @@ export default function App() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  class="size-4"
+                  className="size-4"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
