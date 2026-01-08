@@ -116,7 +116,7 @@ export default function App() {
               <Badge
                 href={
                   i18n.language === 'en'
-                    ? 'https://drive.google.com/uc?export=download&id=1g3H-j1Z61bsi9ua2Cr3-xgkRSA5iRMcj'
+                    ? 'https://drive.google.com/uc?export=download&id=1bz9j_XXCSRXpwt_6TBz4oncXwZpwetN1'
                     : 'https://drive.google.com/uc?export=download&id=19VUAOJ7tetIxQ5igDb3D8AyIkctwb42j'
                 }
               >
